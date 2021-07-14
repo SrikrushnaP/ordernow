@@ -1,0 +1,105 @@
+<div class="container mt-5">
+    <br><br>
+    <div class="row">
+        <div class="col-md-10">
+            <strong>Your order List</strong>
+            <p>List of all order</p>
+        </div>
+        <!-- <div class="col-md-2">
+           <button type="button" class="btn btn-dark float-right" (click)="addProductPopup()" data-toggle="modal"
+               data-target="#editOrderVarModal">
+               Add New Product
+           </button>
+       </div> -->
+    </div>
+    <table class="table table-hover">
+        <thead>
+            <tr>
+                <th scope="col">#</th>
+                <th scope="col">Order ID</th>
+                <th scope="col">Product Name</th>
+                <th scope="col">Order Date</th>
+                <th scope="col">Price</th>
+                <th scope="col">Status</th>
+                <th scope="col">Action</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let product_data of all_order_data; let i = index">
+                <th scope="row">{{i+1}}</th>
+                <td>ESOP000{{product_data.id}}</td>
+                <td>{{product_data.product.name}}</td>
+                <td>{{product_data.dateTime}}</td>
+                <td>{{product_data.product.dp}}</td>
+                <td>{{product_data.status}}</td>
+                <td class="sim-pointer" data-toggle="modal" data-target="#editOrderVarModal"
+                    (click)="editOrderPopup(product_data.id)">
+                    <span><i class="fa fa-pencil-square-o" aria-hidden="true"></i></span>
+                    Update
+                </td>
+            </tr>
+        </tbody>
+    </table>
+
+    <!-- Modal for edit order  -->
+    <div class="modal fade" id="editOrderVarModal" tabindex="-1" role="dialog" aria-labelledby="addEditUserTitle"
+        aria-hidden="true">
+        <div class="modal-dialog modal-dialog-scrollable" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title">{{popup_header}}</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <div class="row">
+                        <div class="col-md-10 offset-md-1">
+                            <div class="form-group">
+                                <label for="orderID">Order ID</label>
+                                <input type="text" class="form-control" value="ESOP000{{edit_order_id}}" readonly/>
+                            </div>
+                            <div class="form-group">
+                                <label for="orderDate">Order Date</label>
+                                <input type="text" class="form-control" value="{{edit_order_date}}" readonly/>
+                            </div>
+                            <form [formGroup]="editOrderForm">
+                                <!-- <div class="form-group">
+                                    <label for="productDescription">Description</label>
+                                    <textarea class="form-control" rows="3" formControlName="productDesc"
+                                        [ngClass]="{'is-invalid':editOrderVar && rf.productDesc.errors}"></textarea>
+                                    <div *ngIf="editOrderVar && rf.productDesc.errors" class="invalid-feedback">
+                                        <div *ngIf="rf.productDesc.errors.required">Write something about product</div>
+                                    </div>
+                                </div> -->
+                                <div class="form-group">
+                                    <label for="productStatus">Status</label>
+                                    <select class="form-control" formControlName="status"
+                                        [ngClass]="{'is-invalid':editOrderVar && rf.status.errors}">
+                                        <option value="process">Process</option>
+                                        <option value="delivered">Delivered</option>
+                                    </select>
+                                    <div *ngIf="editOrderVar && rf.status.errors" class="invalid-feedback">
+                                        <div *ngIf="rf.status.errors.required">Select one option</div>
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <label for="productDescription">Order Update</label>
+                                    <textarea class="form-control" rows="3" formControlName="productDesc"
+                                        [ngClass]="{'is-invalid':editOrderVar && rf.productDesc.errors}"></textarea>
+                                    <div *ngIf="editOrderVar && rf.productDesc.errors" class="invalid-feedback">
+                                        <div *ngIf="rf.productDesc.errors.required">Write something about product</div>
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <button class="btn btn-primary" (click)="updateOrder()"
+                                        *ngIf="edit_order">Update</button>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

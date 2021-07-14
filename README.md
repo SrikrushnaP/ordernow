@@ -1,2 +1,3 @@
-# ordernow
-An Ecomorce project build on the top of Angular and Bootstrap
+# angular-ecommerce
+
+B2B E-Commese Website

@@ -1,0 +1,319 @@
+/* You can add global styles to this file, and also import other style files */
+// @import url('https://fonts.googleapis.com/css?family=Tangerine|Inconsolata|Droid+Sans');
+@import url('https://fonts.googleapis.com/css2?family=Karla:wght@400&display=swap');
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+//////////////////////////////////////
+// GLOBAL                           //
+//////////////////////////////////////
+// Variables
+$primary-color: #7aca8d;
+$secondary-color: #6caa7f;
+
+h1{
+    font-size: 6.5vw;
+}
+h3{
+    font-family: 'Merriweather', serif;
+    font-size: 1.3rem;
+    font-weight: 700;
+}
+h4{
+    font-family: 'Merriweather', serif;
+    font-size: 1.1rem;
+    font-weight: 700;
+    word-spacing: 0.4vw;
+}
+h6{
+    font-size: 0.9rem;
+    font-weight: 700;
+    color: #6caa7f;
+}
+p{
+    font-family: 'Karla', sans-serif;
+    font-size: 1rem;
+    line-height: 1.5rem;
+}
+button{
+    background: #6caa7f;
+    border-style: none;
+    padding: 0.7rem 1.3rem;
+    font-size: 0.9rem;
+    font-weight: 700;
+    letter-spacing: 1px;
+    color: #fff;
+}
+hr{
+    background: #27ae60;
+    color: #27ae60;
+    height: 0.07rem;
+}
+a{
+    text-decoration: none;
+}
+
+//////////////////////////////////////
+// BODY                            //
+//////////////////////////////////////
+
+body{
+    font-family: 'Montserrat', sans-serif;
+    header{
+        .primary-nav{
+            nav{
+                    background: #fff;
+                    // padding: 3rem 2rem;
+                    // height: 0rem;
+                    // min-height: 12vh;
+                    .navbar-brand{
+                        font-family: 'Pacifico', cursive;
+                        font-size: 2rem;
+                        color: $primary-color;
+                        a{
+                            padding: 1rem 0;
+                            display: block;
+                            text-decoration: none;
+                        }
+                    }
+                    .navbar-toggler{
+                        background: $primary-color;
+                        border: none;
+                        padding: 10px 6px;
+                        outline: none;
+                        span{
+                            display: block;
+                            width: 22px;
+                            height: 2px;
+                            border: 1px;
+                            background: #fff;
+                            + span{
+                                margin-top: 4px;
+                                margin-left: 4px;
+                                width: 18px;
+                                + span{
+                                    width: 10px;
+                                    margin-left: 4px;
+                                }
+                            }
+                        }
+                    }
+                    a{
+                        color: rgba(34, 54, 69, 0.7);
+                        font-weight: 500;
+                        &:hover{
+                            color: $primary-color;
+                        }
+                    }
+                    ul{
+                        list-style: none;
+                    }
+                    .navbar-nav {
+                        .btn{
+                            background-color: $primary-color;
+                            color: #fff;
+                            border-radius: 0;
+                            &:hover{
+                                background-color: #0a3d62;
+                            }
+                        }
+                    }
+                }
+            .navbar-expand-lg{
+                .navbar-nav{
+                    .nav-link{
+                        &:hover{
+                            border-top: 4px solid $primary-color;
+                        }
+                        &:active{
+                            border-top: 4px solid $primary-color;
+                            color: $primary-color;
+                        }
+                    }
+                }
+            }
+        }
+        
+        
+    }
+    // .home{
+        .intro{
+            position: relative;
+            .head{
+                position: absolute;
+                top: 50%;
+                left: 50%;
+                transform: translate(-50%, -50%);
+                h1{
+                    font-family: "Leckerli One", cursive;
+                    color: #000;
+                }
+                h6{
+                    color: #27ae60;
+                    letter-spacing: 0.3rem;
+                }
+            }
+        }
+        .secondary-nav{
+            .navbar{
+                .navbar-nav{
+                    .nav-link{
+                        &:hover{
+                           &::after{
+                                width: 60%;
+                                height: 2px;
+                                background: #2ecc71;
+                                transition: width 0.3s;
+                                border-bottom: 2px solid #27ae60;
+                            }
+                        }
+                        &::after{
+                            content: "";
+                            display: block;
+                            width: 0;
+                            height: 2px;
+                            background: #2ecc71;
+                            transition: width 0.3s;
+                        }
+                    }
+                    i{
+                        font-size: 1.2rem;
+                        color: #7aca8d;
+                        cursor: pointer;
+                    }
+                }
+            }
+        }
+    // }
+
+    .featured{
+        .row{
+            .one{
+                height: 300px;
+                position: relative;
+                img{
+                    width: 100%;
+                    height: 100%;
+                    background-size: cover;
+                    box-sizing: border-box;
+                    object-fit: cover;
+                }
+                .text{
+                    background: rgba(0,0,0,0.5);
+                    width: 100%;
+                    height: 100%;
+                    position: absolute;
+                    bottom: 0;
+                    p{
+                        letter-spacing: 0.2rem;
+                        line-height: 2px;
+                    }
+                    a{
+                        border-style: none;
+                        color: #fff;
+                        font-size: 0.9rem;
+                        &::after{
+                            content: "";
+                            display: block;
+                            width: 30%;
+                            height: 2px;
+                            background: #2ecc71;
+                        }
+                    }
+                }
+            }
+        }
+    }
+    .subscription{
+        background: #defadb;
+        .row{
+            .sub{
+                input{
+                    outline: none;
+                    border: 1px solid #6caa7f;
+                    &::placeholder{
+                        font-size: 0.9rem;
+                    }
+                }
+            }
+        }
+    }
+    .blog{
+        .post{
+            a{
+                font-size: 0.9rem;
+                color: #27ae60;
+                font-weight: bold;
+                border-style: none;
+            }
+        }
+        .sidebar{
+            .side2{
+                .row{
+                    .sidetext{
+                        h4{
+                            font-size: 1rem;
+                        }
+                        a{
+                            border-style: none;
+                            color: #6caa7f;
+                            font-size: 0.8rem;
+                        }
+                    }
+                }
+            }
+            .side3{
+                .one{
+                    height: 300px;
+                    position: relative;
+                    img{
+                        width: 100%;
+                        height: 100%;
+                        background-size: cover;
+                        box-sizing: border-box;
+                        object-fit: cover;
+                    }
+                    .text{
+                        background: rgba(0,0,0,0.5);
+                        width: 100%;
+                        height: 100%;
+                        position: absolute;
+                        top: 0;
+                        bottom: 0;
+                        padding: 10rem 1.1rem 0;
+                    }
+                }
+            }
+        }
+    }
+    footer{
+        .border-bottom{
+            background: #7aca8d;
+            .social-text{
+                color: #fff;
+            }
+            .social-icon{
+                i{
+                    color: #fff;
+                }
+            }
+        }
+        .copy-right{
+            background-color: rgba(0, 0, 0, 0.05);
+        }
+    }
+}
+
+.hilight-color{
+    color: #fff;
+    background-color: #7aca8d;
+    font-weight: bold;
+}
+
+
+.sim-pointer{
+    cursor: pointer;
+}
