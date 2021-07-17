@@ -1,8 +1,8 @@
 <div class="intro">
     <img src="../assets/images/header.jpg" alt="Header Image" class="img-fluid w-100">
     <div class="head text-center">
-        <h1>Hella</h1>
-        <h6>LIFESTYLES</h6>
+        <h1>OrderR NoW</h1>
+        <h6>You OrderRed we DeliveRed</h6>
         <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Ullam, velit.</p>
         <hr class="w-25 mx-auto">
     </div>
@@ -24,8 +24,7 @@
                             {{product.dp}}</span></p>
                     <br>
                     <p class="card-text product-desc">{{product.productDesc}}</p>
-                    <a class="btn btn-primary float-left" (click)="addToCart()">Add to Cart</a>
-                    <a class="btn btn-primary float-right" (click)="buyProduct(product.id)">Buy Now</a>
+                    <button class="text-uppercase col-md-12 col-12" (click)="buyProduct(product.id)">Buy Now</button>
                 </div>
             </div>
         </div>

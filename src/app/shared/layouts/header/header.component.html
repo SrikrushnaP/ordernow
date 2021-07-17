@@ -2,7 +2,7 @@
     <div class="primary-nav">
         <nav class="navbar navbar-expand-lg header-nav fixed-top">
             <div class="container-fluid">
-                <a class="navbar-brand" href="#">My Coupon</a>
+                <a class="navbar-brand" href="#">OrderR NoW</a>
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
                     data-bs-target="#navbarSupportedContentPrimary" aria-controls="navbarSupportedContent"
                     aria-expanded="false" aria-label="Toggle navigation">
@@ -13,7 +13,13 @@
                 <div class="collapse navbar-collapse justify-content-between" id="navbarSupportedContentPrimary">
                     <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
                         <li class="nav-item">
-                            <a class="nav-link active" aria-current="page" href="#">Home</a>
+                            <a class="nav-link active" aria-current="page" routerLink="/">Home</a>
+                        </li>
+                        <li class="nav-item" *ngIf="user_role == 'buyer'">
+                            <a class="nav-link active" aria-current="page" routerLink="/buyer-dashboard">Shopping</a>
+                        </li>
+                        <li class="nav-item" *ngIf="user_role == 'seller'">
+                            <a class="nav-link active" aria-current="page" routerLink="/seller-dashboard">Dashboard</a>
                         </li>
                         <li class="nav-item">
                             <a class="nav-link" href="https://developerstips.com/" target="_blank">Blog</a>
