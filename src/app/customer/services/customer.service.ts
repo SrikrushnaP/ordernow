@@ -16,8 +16,8 @@ export class CustomerService {
 
   constructor(private apiService: ApiService) { }
 
-  allProduct(): Observable<any> {
-    return this.apiService.get(this.product_url)
+  getAllActiveProduct(): Observable<any> {
+    return this.apiService.get(this.product_url + '?status=publish')
   }
 
   quickBuyProduct(product_id: number) {

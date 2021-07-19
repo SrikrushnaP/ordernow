@@ -21,7 +21,7 @@
                 <th scope="col">Order Date</th>
                 <th scope="col">Price</th>
                 <th scope="col">Status</th>
-                <th scope="col">Action</th>
+                <th *ngIf="user_role == 'seller'" scope="col">Action</th>
             </tr>
         </thead>
         <tbody>
@@ -32,7 +32,7 @@
                 <td>{{product_data.dateTime}}</td>
                 <td>{{product_data.product.dp}}</td>
                 <td>{{product_data.status}}</td>
-                <td class="sim-pointer" data-toggle="modal" data-target="#editOrderVarModal"
+                <td class="sim-pointer" *ngIf="user_role == 'seller'" data-toggle="modal" data-target="#editOrderVarModal"
                     (click)="editOrderPopup(product_data.id)">
                     <span><i class="fa fa-pencil-square-o" aria-hidden="true"></i></span>
                     Update
