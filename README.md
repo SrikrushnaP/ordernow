@@ -40,4 +40,4 @@ If you want to learn more on mock API you can go through the doc https://www.npm
 https://docs.google.com/document/d/1FkLnuUr-I0MdSj9OG7boYZK4PObB_vwd76dSrCgOeVA/edit
 
 # PPT link:
-https://docs.google.com/presentation/d/e/2PACX-1vQnvrmhjF9eRqyAUnotw3oaLqVhJRqxYigtdwTANBuR_kjiFR7vi9ZoA72vyRtUXpm2fJZ8TrGj7qCJ/pub?start=true&loop=true&delayms=60000
+https://docs.google.com/presentation/d/1GWWWDKxatzI-18ZCY62bKrS8lyU4x6ELzoqfn0T1IeU/edit?usp=sharing
